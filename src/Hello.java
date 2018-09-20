@@ -10,7 +10,7 @@ public class Hello {
         Stream<Employee> employeeStream = Stream.of(employees);
         System.out.println(employeeStream);
         employeeStream.forEach(employee -> {
-            employee.incrementSalary(1);
+            System.out.println(employee.getName());
         });
 
         System.out.println(employeeStream);

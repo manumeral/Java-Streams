@@ -1,7 +1,7 @@
 public class Employee {
-    int empId;
-    String name;
-    int salary;
+    private int empId;
+    private String name;
+    private int salary;
 
     public Employee(int id, String name, int salary) {
         this.empId = id;
@@ -11,5 +11,9 @@ public class Employee {
 
     public void incrementSalary(int increment) {
         this.salary += increment;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
