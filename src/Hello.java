@@ -9,9 +9,11 @@ public class Hello {
         };
         Stream<Employee> employeeStream = Stream.of(employees);
         System.out.println(employeeStream);
-        employeeStream.forEach(employee -> {
-            System.out.println(employee.getName());
-        });
+        employeeStream
+                .skip(1)
+                .forEach(employee -> {
+                    System.out.println(employee.getName());
+                });
 
         System.out.println(employeeStream);
     }
