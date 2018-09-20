@@ -10,6 +10,7 @@ public class Hello {
         Stream<Employee> employeeStream = Stream.of(employees);
         System.out.println(employeeStream);
         employeeStream
+                .limit(2)
                 .skip(1)
                 .forEach(employee -> {
                     System.out.println(employee.getName());
