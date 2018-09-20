@@ -4,8 +4,8 @@ public class Hello {
     public static void main(String[] args) {
         Employee[] employees = {
                 new Employee(1, "Employee 1", 2000),
-                new Employee(1, "Employee 2", 3000),
-                new Employee(1, "Employee 3", 4000),
+                new Employee(1, "Employee 3", 3000),
+                new Employee(1, "Employee 2", 4000),
                 new Employee(1, "Employee 4", 5000),
                 new Employee(1, "Employee 6", 6000),
         };
@@ -16,8 +16,9 @@ public class Hello {
                 .skip(1)
                 .map(employee -> employee.getName().toUpperCase())
                 .filter(employeeName -> {
-                    return (employeeName.charAt(employeeName.length()-1) == '2');
+                    return (employeeName.charAt(employeeName.length()-1) != '1');
                 })
+                .sorted()
                 .forEach(employeeName -> {
                     System.out.println(employeeName);
                 });
