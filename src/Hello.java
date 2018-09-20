@@ -15,8 +15,11 @@ public class Hello {
                 .limit(3)
                 .skip(1)
                 .map(employee -> employee.getName().toUpperCase())
-                .forEach(employee -> {
-                    System.out.println(employee);
+                .filter(employeeName -> {
+                    return (employeeName.charAt(employeeName.length()-1) == '2');
+                })
+                .forEach(employeeName -> {
+                    System.out.println(employeeName);
                 });
 
         System.out.println(employeeStream);
