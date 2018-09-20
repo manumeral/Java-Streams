@@ -13,13 +13,13 @@ public class Hello {
         System.out.println(employeeStream);
         System.out.println(employeeStream
                 .limit(3)
-                .skip(2)
+                .skip(1)
                 .map(employee -> employee.getName().toUpperCase())
                 .filter(employeeName -> {
                     return (employeeName.charAt(employeeName.length()-1) != '1');
                 })
                 .sorted()
-                .allMatch(employeeName -> (employeeName.equalsIgnoreCase("EMPLOYEE 2")))
+                .findFirst( )
         );
     }
 }
