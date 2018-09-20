@@ -19,7 +19,7 @@ public class Hello {
                     return (employeeName.charAt(employeeName.length()-1) != '1');
                 })
                 .sorted()
-                .anyMatch(employeeName -> (employeeName.equalsIgnoreCase("EMPLOYEE 2")))
+                .noneMatch(employeeName -> (employeeName.equalsIgnoreCase("EMPLOYEE 2")))
         );
     }
 }
