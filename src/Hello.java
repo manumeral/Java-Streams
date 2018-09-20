@@ -11,7 +11,7 @@ public class Hello {
         };
         Stream<Employee> employeeStream = Stream.of(employees);
         System.out.println(employeeStream);
-        employeeStream
+        System.out.println(employeeStream
                 .limit(3)
                 .skip(1)
                 .map(employee -> employee.getName().toUpperCase())
@@ -19,11 +19,8 @@ public class Hello {
                     return (employeeName.charAt(employeeName.length()-1) != '1');
                 })
                 .sorted()
-                .forEach(employeeName -> {
-                    System.out.println(employeeName);
-                });
-
-        System.out.println(employeeStream);
+                .anyMatch(employeeName -> (employeeName.equalsIgnoreCase("EMPLOYEE 2")))
+        );
     }
 }
 
